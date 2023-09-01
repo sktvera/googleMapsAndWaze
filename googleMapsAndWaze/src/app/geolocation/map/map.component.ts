@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+  showGoogleMaps = false;
+  showWazeMap = false;
+
+  toggleGoogleMaps() {
+    this.showGoogleMaps = !this.showGoogleMaps;
+    if (this.showGoogleMaps && this.showWazeMap) {
+      this.showWazeMap = false;
+    }
+  }
+
+  toggleWazeMap() {
+    this.showWazeMap = !this.showWazeMap;
+    if (this.showGoogleMaps && this.showWazeMap) {
+      this.showGoogleMaps = false;
+    }
+  }
 
   ngOnInit() {
     if (navigator.permissions) {

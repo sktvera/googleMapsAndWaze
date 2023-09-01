@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapComponent } from './map/map.component';
 import { WazeButtonComponent } from './waze-button/waze-button.component';
-
+import { IonicModule } from '@ionic/angular';
 import { GeoLocationRoutingModule } from './geolocation-routing.module';
 
 @NgModule({
@@ -12,7 +12,8 @@ import { GeoLocationRoutingModule } from './geolocation-routing.module';
   ],
   imports: [
     CommonModule,
-    GeoLocationRoutingModule
+    GeoLocationRoutingModule,
+    IonicModule
   ]
 })
 export class GeolocationModule { }

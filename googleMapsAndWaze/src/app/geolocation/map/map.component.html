@@ -1,9 +1,52 @@
 <!-- geolocation/map/map.component.html -->
-<iframe
-  width="100%"
-  height="400"
-  frameborder="0"
-  style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Tu+Ubicacion"
-  allowfullscreen>
-</iframe>
+<ion-content class="map-container">
+    <div class="map-section">
+      <ion-card-title>Mapa Waze</ion-card-title>
+      <ion-button expand="block" (click)="toggleWazeMap()">Activar</ion-button>
+      <div class="map-frame" *ngIf="showWazeMap">
+        <ion-card>
+          <iframe
+                src="https://embed.waze.com/iframe?zoom=13&lat=LATITUD&lon=LONGITUD&pin=1&geolocation=yes"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  
+    <div class="map-section">
+      <ion-card-title>Mapa Google Maps</ion-card-title>
+      <ion-button (click)="toggleGoogleMaps()">Activar</ion-button>
+      <div class="map-frame" *ngIf="showGoogleMaps">
+        <ion-card>
+          <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Tu+Ubicacion&source=geolocation"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </ion-content>
+
+  
+  
+
+
+ 
